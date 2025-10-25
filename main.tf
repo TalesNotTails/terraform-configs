@@ -1,7 +1,10 @@
 resource "aws_instance" "ansible_dev_node" {
-  ami           = "ami-0853d3a745e6fa2c3"
+  ami           = "ami-0572c4c57382716bb"
   instance_type = "t2.micro"
   security_groups = [ "EC2-Default-SG" ]
+  root_block_device {
+    delete_on_termination = true
+  }
   user_data = <<EOF
   #!/bin/bash
   cd /home/ansible/
