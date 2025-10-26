@@ -1,6 +1,6 @@
 resource "aws_instance" "ansible_dev_node" {
   ami           = "ami-025320f9a154d727c"
-  instance_type = "t2.micro"
+  instance_type = "t3.micro"
   security_groups = [ "EC2-Default-SG" ]
   root_block_device {
     delete_on_termination = true
