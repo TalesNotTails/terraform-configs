@@ -1,8 +1,11 @@
-resource "aws_ebs_volume" "bois_mc_vol" {
-  availability_zone = "us-east-1a"
-  size = 20
-  type = "gp3"
+resource "aws_ebs_volume" "volumes" {
+  for_each = var.mc_servers
+
+  availability_zone = each.value.vol_az
+  size              = each.value.vol_size
+  type              = each.value.vol_type
+
   tags = {
-    state = "new"
+    ManagedBy = "Terraform"
   }
 }
