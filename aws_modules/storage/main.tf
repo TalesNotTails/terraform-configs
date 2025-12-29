@@ -8,4 +8,8 @@ resource "aws_ebs_volume" "volumes" {
   tags = {
     ManagedBy = "Terraform"
   }
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
