@@ -1,5 +1,5 @@
 resource "aws_ebs_volume" "volumes" {
-  for_each = var.mc_servers
+  for_each = var.servers
 
   availability_zone = each.value.vol_az
   size              = each.value.vol_size

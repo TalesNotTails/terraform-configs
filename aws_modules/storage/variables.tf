@@ -1,4 +1,4 @@
-variable mc_servers {
+variable servers {
   description = "A map of servers with properties to create"
   type        = map(object({
     vol_size      = number
