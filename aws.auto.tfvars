@@ -1,15 +1,19 @@
 servers = {
   babe_mc_server = {
-    inst_ami       = "ami-0e9e3701ddd593b08"
+    subnet    = "mc_subnet"
+    pub_ip    = true
+    inst_ami  = "ami-0e9e3701ddd593b08"
     inst_type = "t3a.small"
-    vol_size      = 10
+    vol_size  = 10
     vol_type  = "gp3"
     vol_az    = "us-east-1a"
   },
   discord_mc_server = {
-    inst_ami       = "ami-0e9e3701ddd593b08"
-    inst_type  = "t3a.medium"
-    vol_size      = 10
+    subnet    = "mc_subnet"
+    pub_ip    = true
+    inst_ami  = "ami-0e9e3701ddd593b08"
+    inst_type = "t3a.medium"
+    vol_size  = 10
     vol_type  = "gp3"
     vol_az    = "us-east-1a"
   }
@@ -26,6 +30,7 @@ subnets = {
   mc_subnet = {
     cidr_block  = "10.0.1.0/24"
     vpc = "main_vpc"  
+    az  = "us-east-1a"
   }
 }
 

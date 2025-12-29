@@ -6,6 +6,7 @@ resource "aws_vpc" "vpcs" {
 
 resource "aws_subnet" "subnets" {
   for_each    = var.subnets
+  availability_zone = each.value.az
   vpc_id      = aws_vpc.vpcs[each.value.vpc].id
   cidr_block  = each.value.cidr_block
 }

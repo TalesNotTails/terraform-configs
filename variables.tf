@@ -1,6 +1,8 @@
 variable servers {
   description = "A map of servers with properties to create"
   type        = map(object({
+    subnet    = string
+    pub_ip    = bool
     inst_ami  = string
     inst_type = string
     vol_size  = number
@@ -22,6 +24,7 @@ variable subnets {
   type        = map(object({
     vpc         = string
     cidr_block  = string
+    az          = string
   }))
 }
 

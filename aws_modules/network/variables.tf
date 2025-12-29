@@ -11,6 +11,7 @@ variable subnets {
   type        = map(object({
     vpc         = string
     cidr_block  = string
+    az          = string
   }))
 }
 
